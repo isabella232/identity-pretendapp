@@ -13,7 +13,7 @@ spec:
         app: pretendapp
     spec:
       containers:
-      - name: pretendapp
+      - name: pretend-app
         image: logindotgov/pretend-app
         resources:
           limits:
