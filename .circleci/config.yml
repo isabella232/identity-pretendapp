@@ -8,10 +8,11 @@ jobs:
       - setup_remote_docker:
           docker_layer_caching: false
       - run: |
-          docker build --build-arg GIT_HASH=$CIRCLE_SHA1 -t logindotgov/pretend-app:$CIRCLE_BRANCH -t logindotgov/pretend-app:$CIRCLE_SHA1 .
+          docker build --build-arg GIT_HASH=$CIRCLE_SHA1 -t logindotgov/pretend-app:$CIRCLE_BRANCH -t logindotgov/pretend-app:$CIRCLE_SHA1 -t logindotgov/pretend-app:$CIRCLE_BRANCH-$CIRCLE_SHA1 .
           echo $DOCKER_PASSWORD | docker login -u $DOCKER_USER --password-stdin
           docker push logindotgov/pretend-app:$CIRCLE_SHA1
           docker push logindotgov/pretend-app:$CIRCLE_BRANCH
+          docker push logindotgov/pretend-app:$CIRCLE_BRANCH-$CIRCLE_SHA1
           if [ "$CIRCLE_BRANCH" = "master" ] ; then
             docker tag logindotgov/pretend-app:master logindotgov/pretend-app:latest
             docker push logindotgov/pretend-app:latest
