@@ -11,7 +11,6 @@ spec:
     metadata:
       labels:
         app: pretendapp
-        foo: bar
     spec:
       containers:
       - name: pretendapp
