@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: pretend-app
-        image: logindotgov/pretend-app:1e00e2552015007bac0403720e70a06a543bf2b1
+        image: logindotgov/pretend-app
         resources:
           limits:
             memory: "128Mi"
