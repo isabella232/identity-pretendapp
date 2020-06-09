@@ -1,0 +1,24 @@
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: pretendapp-staging
+  namespace: identity-demo
+  annotations:
+    kubernetes.io/ingress.class: alb
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/target-type: ip
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}]'
+    external-dns.alpha.kubernetes.io/hostname: "pretendapp-staging.devops-test.v2.identitysandbox.gov"
+spec:
+  backend:
+    serviceName: pretendapp-staging
+    servicePort: 80
+  rules:
+  - host: "pretendapp-staging.devops-test.v2.identitysandbox.gov"
+    http:
+      paths:
+      - backend:
+          serviceName: pretendapp-staging
+          servicePort: 80
+        path: /*

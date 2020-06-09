@@ -1,0 +1,12 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: pretendapp-staging
+  namespace: identity-demo
+spec:
+  selector:
+    app: pretendapp-staging
+  ports:
+  - port: 80
+    targetPort: 80
