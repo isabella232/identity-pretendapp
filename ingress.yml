@@ -10,6 +10,7 @@ metadata:
     alb.ingress.kubernetes.io/target-type: ip
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}]'
     external-dns.alpha.kubernetes.io/hostname: "pretendapp.devops-test.v2.identitysandbox.gov"
+    foo: bar
 spec:
   backend:
     serviceName: pretendapp

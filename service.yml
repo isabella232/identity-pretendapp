@@ -4,6 +4,7 @@ kind: Service
 metadata:
   name: pretendapp
   namespace: identity-demo
+  foo: bar
 spec:
   selector:
     app: pretendapp
