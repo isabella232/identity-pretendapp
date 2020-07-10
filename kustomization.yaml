@@ -1,5 +1,4 @@
 resources:
   - service.yml
   - deployment.yml
-  - malicious-deployment.yml
 
