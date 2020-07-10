@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: pretendapp
-  namespace: identity-demo
 spec:
   selector:
     matchLabels:
