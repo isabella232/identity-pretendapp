@@ -9,12 +9,14 @@ metadata:
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}]'
     alb.ingress.kubernetes.io/scheme: internet-facing
 spec:
+  backend:
+    serviceName: pretendapp-prod
+    servicePort: 80
   rules:
   - http:
       paths:
-      - path: /
-        pathtype: Prefix
-        backend:
-          serviceName: pretendapp
+      - backend:
+          serviceName: pretendapp-prod
           servicePort: 80
+        path: /*
 
